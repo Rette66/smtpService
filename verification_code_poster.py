@@ -97,13 +97,7 @@ class VerificationCodePoster():
         return flag
 
 
-@app.get("/sendOne/{receiver}/{verification_code}")
-def sendOne(receiver: str, verification_code: str):
-    poster = VerificationCodePoster(verification_code)
-    temp = mail_html
-    temp = temp.replace('{code}', verification_code)
-    poster.sendCode(receiver, temp)
-    return "sent!"
+
 
 
 # @app.post("/send/email")
