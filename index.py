@@ -5,7 +5,7 @@ from verification_code_poster import VerificationCodePoster
 
 
 app = fastapi.FastAPI()
-
+ 
 @app.get("/sendOne/{receiver}/{verification_code}")
 def sendOne(receiver: str, verification_code: str):
     poster = VerificationCodePoster(verification_code)

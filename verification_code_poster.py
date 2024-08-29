@@ -1,28 +1,17 @@
 from email.header import Header
-from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-import os
 import random
 from smtplib import SMTP_SSL
-from mail_content import mail_html
 
 from fastapi import FastAPI
 
-import yagmail
 
+from mail_pool import Mails
 from tools import get_time_stamp
 
 app = FastAPI()
 
-Mails = [
-    {
-        "mail": "845265098@qq.com",
-        "auth": "oqaoscyizbjobfci",
-        'smtp': "smtp.qq.com",
-        'counts': 0
-    },
-]
 
 
 class VerificationCodePoster():
